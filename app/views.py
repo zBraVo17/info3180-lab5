@@ -46,7 +46,7 @@ def login():
             login_user(user)
 
             # remember to flash a message to the user
-            return redirect(url_for("home")) # they should be redirected to a secure-page route instead
+            return redirect(url_for("home"))  # they should be redirected to a secure-page route instead
     return render_template("login.html", form=form)
 
 
