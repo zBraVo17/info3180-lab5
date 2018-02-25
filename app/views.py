@@ -21,10 +21,12 @@ def home():
     """Render website's home page."""
     return render_template('home.html')
 
+
 @app.route('/about/')
 def about():
     """Render the website's about page."""
     return render_template('about.html')
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -47,6 +49,7 @@ def login():
             return redirect(url_for("home")) # they should be redirected to a secure-page route instead
     return render_template("login.html", form=form)
 
+
 # user_loader callback. This callback is used to reload the user object from
 # the user ID stored in the session
 @login_manager.user_loader
@@ -56,6 +59,7 @@ def load_user(id):
 ###
 # The functions below should be applicable to all Flask apps.
 ###
+
 
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):
@@ -82,4 +86,4 @@ def page_not_found(error):
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host="0.0.0.0",port="8080")
+    app.run(debug=True, host="0.0.0.0", port="8080")
